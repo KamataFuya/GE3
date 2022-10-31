@@ -425,7 +425,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     //入力初期化
     input = new Input();
-    input->Initialize(winApp->GetHInstance(), winApp->GetHwnd());
+    input->Initialize(winApp);
 
 #pragma region 描画初期化処理
 
@@ -1062,12 +1062,15 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         // DirectX毎フレーム処理　ここまで
 
     }
-
+    //入力開放
     delete input;
+    input = nullptr;
+   
+    //WindowsAPIの終了処理
+    winApp->Finalize();
+    //WindowsAPI解放
     delete winApp;
-
-    // ウィンドウクラスを登録解除
-    UnregisterClass(w.lpszClassName, w.hInstance);
+    winApp = nullptr;
 
     return 0;
 }

@@ -4,6 +4,8 @@
 #define DIRECTINPUT_VERSION     0x0800   // DirectInputのバージョン指定
 #include <dinput.h>
 
+#include "WinApp.h"
+
 //ヘッダーファイル内にusing namespaceを入れるのはNG。using namespaceが全体に広がってしまうため
 
 class Input
@@ -16,7 +18,7 @@ public: //メンバ関数
 	/// <summary>
 	/// 初期化
 	/// </summary>
-	void Initialize(HINSTANCE hInstance, HWND hwnd);
+	void Initialize(WinApp* winApp);
 
 	/// <summary>
 	/// 更新
@@ -38,6 +40,8 @@ public: //メンバ関数
 	bool TriggerKey(BYTE keyNumber);
 
 private: //メンバ変数
+	//WindowsAPIのポインタ
+	WinApp* winApp_ = nullptr;
 	//キーボードデバイスの生成
 	ComPtr<IDirectInputDevice8> keyboard;
 	//DirectInputのインスタンス

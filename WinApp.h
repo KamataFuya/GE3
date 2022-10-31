@@ -19,6 +19,11 @@ public://ƒƒ“ƒoŠÖ”
 	/// </summary>
 	void Update();
 
+	/// <summary>
+	/// I—¹
+	/// </summary>
+	void Finalize();
+
 	//Getter
 	HWND GetHwnd() const { return hwnd; }
 	HINSTANCE GetHInstance() const { return w.hInstance; }
