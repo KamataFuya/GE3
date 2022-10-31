@@ -15,9 +15,10 @@ public://メンバ関数
 	void Initialize();
 
 	/// <summary>
-	/// 更新
+	/// メッセージ処理
 	/// </summary>
-	void Update();
+	/// <returns></returns>
+	bool ProcessMessage();
 
 	/// <summary>
 	/// 終了
