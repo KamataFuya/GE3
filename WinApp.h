@@ -19,7 +19,20 @@ public://メンバ関数
 	/// </summary>
 	void Update();
 
-private:
+	//Getter
+	HWND GetHwnd() const { return hwnd; }
+	HINSTANCE GetHInstance() const { return w.hInstance; }
 
+public://定数
+	//ウィンドウ横幅
+	static const int window_width = 1280;
+	//ウィンドウ縦幅
+	static const int window_height = 720;
+
+private://メンバ変数
+	//ウィンドウハンドル
+	HWND hwnd = nullptr;
+	//ウィンドウクラスの設定
+	WNDCLASSEX w{};
 };
 
