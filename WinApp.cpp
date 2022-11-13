@@ -48,6 +48,7 @@ void WinApp::Initialize(){
 }
 
 bool WinApp::ProcessMessage(){
+    //メッセージ
     MSG msg{};
 
     // メッセージがある？
